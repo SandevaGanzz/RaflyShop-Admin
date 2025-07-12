@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://files.catbox.moe/azgypf.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.login-box, .dashboard {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00ffc3;
+}
+
+.login-box input,
+.login-box button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  background: #00ffc3;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+#logout-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  padding: 10px 20px;
+  background: #00ffc3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  color: black;
+}
+
+.statistik {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.statistik p {
+  flex: 1 1 100px;
+  padding: 10px 15px;
+  background: #000;
+  border: 2px solid #00ffc3;
+  border-radius: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#filter-status,
+#search-id {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #00ffc3;
+  outline: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+#pesanan-list {
+  overflow-x: auto;
+}
+
+/* TABEL UTAMA - DESKTOP */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #00ffc3;
+  text-align: center;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+th {
+  background-color: #00ffc3;
+  color: black;
+}
+
+td button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #00ffc3;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+td a {
+  color: #00ffc3;
+  text-decoration: underline;
+}
+
+.pesanan-item:hover {
+  background-color: #222;
+  transition: background 0.2s ease-in-out;
+}
+
+/* RESPONSIF: HP & TABLET */
+@media screen and (max-width: 768px) {
+  .login-box, .dashboard {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .statistik {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  table, thead {
+    display: none;
+  }
+
+  #pesanan-list {
+    padding: 0;
+  }
+
+  /* TABEL MODE KARTU DI HP */
+  #pesanan-list table,
+  #pesanan-list tbody,
+  #pesanan-list tr,
+  #pesanan-list td {
+    display: block;
+    width: 100%;
+  }
+
+  #pesanan-list tr {
+    margin-bottom: 15px;
+    border: 1px solid #00ffc3;
+    border-radius: 10px;
+    padding: 10px;
+    background: #111;
+    box-shadow: 0 0 8px #00ffc3;
+  }
+
+  #pesanan-list td {
+    text-align: left;
+    padding: 8px 10px;
+    position: relative;
+    font-size: 13px;
+    border: none;
+    border-bottom: 1px solid #00ffc3;
+  }
+
+  #pesanan-list td:last-child {
+    border-bottom: none;
+  }
+
+  #pesanan-list td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #00ffc3;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  td button {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #logout-button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}

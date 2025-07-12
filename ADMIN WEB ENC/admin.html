@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>😎Admin Jualan🔥 - 🛒RaflyShop💫</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <!-- Tombol Logout -->
+  <button id="logout-button" onclick="logout()" style="display: none;">← Logout</button>
+
+  <!-- Login Box -->
+  <div class="login-box" id="login-box">
+    <h2>🚀Login Admin😎</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email Admin" required />
+      <input type="password" id="password" placeholder="Password Admin" required />
+      
+      <!-- Remember Me -->
+      <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+        <input type="checkbox" id="remember-me" />
+        <span>Ingat saya</span>
+      </label>
+      
+      <button type="submit">🔥Login💫</button>
+    </form>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboard" style="display: none;">
+    <h2>📦 Pesanan Masuk - Admin Panel</h2>
+
+    <!-- Statistik -->
+    <div class="statistik">
+      <p>🛒Total: <b id="total-pesanan">0</b></p>
+      <p>✅Selesai: <b id="total-selesai">0</b></p>
+      <p>🧭Pending: <b id="total-pending">0</b></p>
+      <p>🗺️Hari Ini: <b id="stat-harian">0</b></p>
+      <p>🌐Bulan Ini: <b id="stat-bulanan">0</b></p>
+    </div>
+
+    <!-- Filter Status -->
+    <select id="filter-status">
+      <option value="all">Semua</option>
+      <option value="Pending">Pending</option>
+      <option value="Selesai">Selesai</option>
+    </select>
+
+    <!-- Search -->
+    <div style="margin: 20px 0;">
+      <input type="text" id="search-id" placeholder="🔍 Cari berdasarkan ID Transaksi..." />
+    </div>
+
+    <!-- List Pesanan -->
+    <div id="pesanan-list">⏳ Memuat data...</div>
+  </div>
+
+  <!-- Script -->
+  <script src="admin.js"></script>
+</body>
+</html>
